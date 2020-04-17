@@ -1,0 +1,102 @@
+<!--
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+          <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__figure">
+              <span class="slds-icon_container slds-icon-standard-account" title="account">
+                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                  <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account"></use>
+                </svg>
+                <span class="slds-assistive-text">Income Approach</span>
+              </span>
+            </div>
+            <div class="slds-media__body">
+              <h2 class="slds-card__header-title">
+                <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+                  <span>Income Approach To Valuation</span>
+                </a>
+              </h2>
+            </div>
+          </header>
+        </div>
+        <div class="slds-card__body">
+            <div class="slds-m-around_medium">
+                <lightning-input  label="Name" value={rec.Name} onchange={nameHandler}></lightning-input>
+                <lightning-input  label="Address" value={rec.Address__c} onchange={addressHandler}></lightning-input>
+                <lightning-input  label="Account Number" value={rec.Account_Number__c} onchange={accntNumberHandler}></lightning-input>
+                <lightning-input  label="PGI" value={rec.PGI__c} onchange={PGIHandler}></lightning-input>
+                <lightning-input  label="Occupancy" value={rec.Occupancy__c} onchange={OCCHandler}></lightning-input>
+                <lightning-input  label="NOI" value={rec.NOI__c}  onchange={NOIHandler}></lightning-input>
+                <lightning-input  label="Fixed Expenses" value={Fixed_Expenses__c} onchange={fixedExpHandler}></lightning-input>
+                <lightning-input  label="Variable Expenses" value={rec.Variable_Expenses__c} onchange={variableExpHandler}></lightning-input>
+                <lightning-input  label="EGI" value={rec.EGI__c} onchange={EGIHandler}></lightning-input>
+                <lightning-input  label="Cap Rate" value={rec.Cap_Rate__c} onchange={capRateHandler}></lightning-input>
+                <lightning-input  label="Value" value={rec.Value__c} onchange={ttlValHandler}></lightning-input>
+                <lightning-input  label="Notes" value={rec.Notes__c}  onchange={notesHandler}></lightning-input>
+            </div>
+            <div class="slds-button-group" role="group">
+                <button class="slds-button slds-button_brand" onclick={handleClick}>Save</button>
+                <button class="slds-button slds-button_neutral" onclick={calc}>Calculate</button>
+                <button class="slds-button slds-button_text-destructive" onclick={clearForm}>Clear</button>
+            </div>
+        </div>
+      </article>
+</template>
+-->
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+          <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__figure">
+              <span class="slds-icon_container slds-icon-standard-account" title="account">
+                <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                  <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account"></use>
+                </svg>
+                <span class="slds-assistive-text">Income Approach To Valuation Ver 1</span>
+              </span>
+            </div>
+            <div class="slds-media__body">
+              <h2 class="slds-card__header-title">
+                <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Income Approaches">
+                  <span>Income Approach To Valuation Version One</span>
+                </a>
+              </h2>
+            </div>
+          </header>
+        </div>
+        <div class="slds-card__body">
+            <div class="slds-m-around_medium"
+              id="createIncomeApproachForm"
+              onsuccess={handleSuccess}
+            >
+                <p>Name:{vName}</p>
+                <p>Address:{vAAdress}</p>
+                <p>Account Number:{vAccountNuber}</p>
+                <p>Total Value:{vValue}</p>
+                <lightning-record-edit-form>
+                <lightning-input  label="Name" value={vName} onchange={nameHandler}></lightning-input>
+                <lightning-input  label="Address" value={vAAdress} onchange={addressHandler}></lightning-input>
+                <lightning-input  label="Account Number" value={vAccountNuber} onchange={accntNumberHandler}></lightning-input>
+                <lightning-input  label="PGI" value={vPGI} onchange={PGIHandler}></lightning-input>
+                <lightning-input  label="Occupancy" value={vOCC} onchange={OCCHandler}></lightning-input>
+                <lightning-input  label="NOI" value={vNOI}  onchange={NOIHandler}></lightning-input>
+                <lightning-input  label="Fixed Expenses" value={vFixedExp} onchange={fixedExpHandler}></lightning-input>
+                <lightning-input  label="Variable Expenses" value={vVariable} onchange={variableExpHandler}></lightning-input>
+                <lightning-input  label="EGI" value={vEGI} onchange={EGIHandler}></lightning-input>
+                <lightning-input  label="Cap Rate" value={vCAPRate} onchange={capRateHandler}></lightning-input>
+                <lightning-input  label="Value" value={vValue} onchange={ttlValHandler}></lightning-input>
+                <lightning-input  label="Notes" value={vNotes}  onchange={notesHandler}></lightning-input>
+
+                <div class="slds-button-group" role="group">
+                    <!--<button class="slds-button slds-button_brand" onclick={handleClick}>Save</button>-->
+                    <button class="slds-button slds-button_neutral" type="submit">Submit</button>
+                    <button class="slds-button slds-button_neutral" onclick={calc}>Calculate</button>
+                    <button class="slds-button slds-button_text-destructive"  onclick={clearForm}>Clear</button>
+                </div>
+             </lightning-record-edit-form> 
+            </div>
+           
+        </div>
+      </article>
+</template>
