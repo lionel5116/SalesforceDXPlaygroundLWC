@@ -18,6 +18,9 @@ export default class IncomeApproachLWCVersionTwo extends LightningElement {
     @track vValue = '';
     @track vNotes = '';
 
+    @track showButtons = false;
+    @track btnDisabledCondition =false;
+
     rec = {
         Name : this.vName,
         Address__c : this.vAAdress,
@@ -37,11 +40,15 @@ export default class IncomeApproachLWCVersionTwo extends LightningElement {
     {
         this.rec.Name = event.target.value; 
         this.vName = event.target.value;
+        this.showButtons = false;
+        this.btnDisabledCondition = true;
     }
     addressHandler(event)
     {
         this.rec.Address__c = event.target.value; 
         this.vAAdress = event.target.value;
+        this.showButtons = false;
+        this.btnDisabledCondition = true;
     }
     accntNumberHandler(event)
     {
@@ -52,11 +59,13 @@ export default class IncomeApproachLWCVersionTwo extends LightningElement {
     {
         this.rec.PGI__c = event.target.value; 
         this.vPGI = event.target.value;
+        this.showButtons = false;
     }
     OCCHandler(event)
     {
         this.rec.Occupancy__c = event.target.value; 
         this.vOCC = event.target.value;
+        this.showButtons = false;
     }
     NOIHandler(event)
     {
@@ -67,11 +76,13 @@ export default class IncomeApproachLWCVersionTwo extends LightningElement {
     {
         this.rec.Fixed_Expenses__c = event.target.value; 
         this.vFixedExp = event.target.value;
+        this.showButtons = false;
     }
     variableExpHandler(event)
     {
         this.rec.Variable_Expenses__c = event.target.value; 
         this.vVariable = event.target.value;
+        this.showButtons = false;
     }
     EGIHandler(event)
     {
@@ -82,11 +93,30 @@ export default class IncomeApproachLWCVersionTwo extends LightningElement {
     {
         this.rec.Cap_Rate__c = event.target.value; 
         this.vCAPRate = event.target.value;
+        if(parseFloat(this.vCAPRate) > .01)
+        {
+            this.showButtons = true;
+        }
+        else
+        {
+            this.showButtons = false;
+        }
+        
     }
     ttlValHandler(event)
     {
         this.rec.Value__c = event.target.value; 
         this.vValue = event.target.value; 
+       if( parseFloat(this.rec.Value__c) > 0)
+       {
+           this.btnDisabledCondition = false;
+           console.log("Total Value is greater > than Zero!!!");
+       }
+       else
+       {
+           this.btnDisabledCondition = true;
+           console.log("Total Value is less* than Zero!!!");
+       }
     }
     notesHandler(event)
     {
@@ -153,6 +183,17 @@ export default class IncomeApproachLWCVersionTwo extends LightningElement {
        this.rec.EGI__c = parseFloat(this.vNOI) - this.totalExpenses;
        this.rec.NOI__c  = (this.vPGI * this.vOCC);
        this.rec.Value__c = (this.vEGI / parseFloat(this.vCAPRate)).toFixed(2); 
+       console.log("Total Value is " +  parseFloat(this.rec.Value__c))
+       if( parseFloat(this.rec.Value__c) > 0)
+       {
+           this.btnDisabledCondition = false;
+           console.log("Total Value is greater > than Zero!!!");
+       }
+       else
+       {
+           this.btnDisabledCondition = true;
+           console.log("Total Value is less* than Zero!!!");
+       }
        console.log(this.rec);
    }
 

@@ -38,8 +38,8 @@
                 <lightning-input  label="Value" value={vValue} onchange={ttlValHandler}></lightning-input>
                 <lightning-input  label="Notes" value={vNotes}  onchange={notesHandler}></lightning-input>
             </div>
-            <div class="slds-button-group" role="group">
-                <button class="slds-button slds-button_success" onclick={handleClick}>Save</button>
+            <div class="slds-button-group" role="group" if:true={showButtons}>
+                <button class="slds-button slds-button_success" onclick={handleClick} disabled={btnDisabledCondition}>Save</button>
                 <button class="slds-button slds-button_outline-brand" onclick={calc}>Calculate</button>
                 <button class="slds-button slds-button_text-destructive" onclick={clearForm}>Clear</button>
             </div>
