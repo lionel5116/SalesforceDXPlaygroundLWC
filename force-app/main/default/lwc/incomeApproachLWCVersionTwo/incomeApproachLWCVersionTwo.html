@@ -39,10 +39,11 @@
                 <lightning-input  label="Notes" value={vNotes}  onchange={notesHandler}></lightning-input>
             </div>
             <div class="slds-button-group" role="group" if:true={showButtons}>
-                <button class="slds-button slds-button_success" onclick={handleClick} disabled={btnDisabledCondition}>Save</button>
+                <button class="slds-button slds-button_destructive" onclick={handleClick} disabled={btnDisabledCondition}>Save-Be Careful</button>
                 <button class="slds-button slds-button_outline-brand" onclick={calc}>Calculate</button>
-                <button class="slds-button slds-button_text-destructive" onclick={clearForm}>Clear</button>
+                <button class="slds-button slds-button_brand" onclick={clearForm}>Clear Fields</button>
             </div>
         </div>
       </article>
 </template>
+
