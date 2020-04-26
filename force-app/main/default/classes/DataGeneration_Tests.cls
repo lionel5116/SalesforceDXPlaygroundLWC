@@ -40,7 +40,7 @@ you’re creating the necessary data by creating and inserting objects. Brute fo
         contacts = [SELECT Id FROM Contact];
         Test.stopTest();
         System.assert(accts.size() > 0, 'Was expecting to find at least one account');
-        System.assertEquals(5, contacts.size(), 'Was expecting to find 5 contacts');  //I want to make this test fail
+        System.assertEquals(6, contacts.size(), 'Was expecting to find 5 contacts');  //I want to make this test fail
       }
 
       @isTest static void testAtTestSetupMethodsRule(){
