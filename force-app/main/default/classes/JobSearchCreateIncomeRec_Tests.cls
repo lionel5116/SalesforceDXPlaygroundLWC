@@ -1,10 +1,8 @@
 
 @isTest
 private class JobSearchCreateIncomeRec_Tests {
-   
   @isTest static void tstCreateIncomeApproachRecrd()
   {
-    
       List<Income_Approach_JobS__c> jobIncs = new List<Income_Approach_JobS__c>();
       Income_Approach_JobS__c  j = new Income_Approach_JobS__c( 
         Address__c = '17615 MAGNOLIA CR',
@@ -26,5 +24,4 @@ private class JobSearchCreateIncomeRec_Tests {
     System.assert(jobIncs.size() > 0, 'Was expecting to find at least one Income Approach Record');
     
   }
-
 }
