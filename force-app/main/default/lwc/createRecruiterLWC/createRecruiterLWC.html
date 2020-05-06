@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="Create Recruiters">
+      <lightning-layout>
+          <lightning-layout-item size="6" padding="round-small">
+              <lightning-card title="Create Recruiter Record">
+
+                <lightning-input name="Recruiter Name"
+                                 label="Recruiter Name"
+                                 onchange={recruiterNameChangeHandler}>
+                </lightning-input>
+
+                <lightning-input name="Phone Number"
+                label="Phone Number"
+                onchange={recruiterPhoneNumberChangeHandler}>
+                </lightning-input>
+
+                <lightning-input name="Cell Phone"
+                label="Cell Phone"
+                onchange={recruiterCellPhoneChangeHandler}>
+                </lightning-input>
+
+
+                <lightning-input name="Email Address"
+                label="Email Address"
+                onchange={recruiterEmailAddressChangeHandler}>
+                </lightning-input>
+
+                <lightning-input name="Firm Name"
+                label="Firm Name"
+                onchange={recruiterFirmNameChangeHandler}>
+                </lightning-input>
+
+                <lightning-button label="Create Recruiter" style="margin-top: 10px" onclick={createRecruiter} variant="brand"></lightning-button>
+               
+
+              </lightning-card>
+          </lightning-layout-item>
+
+          <lightning-layout-item size="6" padding="round-small">
+            <lightning-card title="View Recruiter Record">
+                <p><lightning-formatted-text value={recruiterName}></lightning-formatted-text></p>
+                <p><lightning-formatted-text value={recruiterPhoneNumber}></lightning-formatted-text></p>
+                <p><lightning-formatted-text value={recruiterCellPhone}></lightning-formatted-text></p>
+                <p><lightning-formatted-text value={recruiterEmailAddress}></lightning-formatted-text></p>
+                <p><lightning-formatted-text value={recruiterFirmName}></lightning-formatted-text></p>
+            </lightning-card>   
+          </lightning-layout-item>
+
+      </lightning-layout>
+    </lightning-card>
+</template>
