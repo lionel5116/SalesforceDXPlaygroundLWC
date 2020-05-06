@@ -1,5 +1,6 @@
 <template>
-    <div class="slds-card slds-p-around_x-small">
+  <!--THIS IS THE PARENT COMPONENT-->  
+  <div class="slds-card slds-p-around_x-small">
       <template if:true={products.data}>
           <div class="content">
               <template for:each={products.data.records} for:item="product">
