@@ -15,6 +15,7 @@ myContact = ContactController.getContactList('003f400000gtwDuAAI');
 System.debug(myContact.size());
 System.debug(myContact);
 */
-delete [SELECT id FROM Contact WHERE Email = 'ljones@gmail.com'];
+//delete [SELECT id FROM Contact WHERE Email = 'ljones@gmail.com'];
+ContactRecruiterTask.createTaskToContactRecruiter();
 
 

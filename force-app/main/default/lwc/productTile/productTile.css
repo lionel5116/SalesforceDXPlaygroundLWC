@@ -1,0 +1,21 @@
+.content{
+  padding:8px;
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+}
+
+a{
+    color: inherit;
+}
+
+.title{
+    font-weight: bold;
+    text-transform: none;  /*The text-transform property controls the capitalization of text*/
+}
+
+img.product{
+    height: 120px;
+    max-width: initial;
+    pointer-events: none;
+}
+
