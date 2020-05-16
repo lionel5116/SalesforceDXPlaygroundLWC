@@ -24,6 +24,7 @@ export default class ProductCard extends LightningElement {
    recordId;
    @wire(CurrentPageReference) pageRef;
    @wire(getRecord, {recordId:'$recordId',fields})
+   product;
 
    connectedCallback()
    {
@@ -38,5 +39,10 @@ export default class ProductCard extends LightningElement {
    handleProductSelected(productId)
    {
       this.recordId = productId;
+   }
+
+   get noData()
+   {
+      return !this.product.error && !this.product.data;
    }
 }
