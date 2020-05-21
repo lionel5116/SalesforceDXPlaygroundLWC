@@ -40,8 +40,7 @@ export default class ProductTileList extends LightningElement {
     /**
      * Load the list of available products.
      */
-    @wire(getProducts, { filters: '$filters', pageNumber: '$pageNumber' })
-    products;
+    @wire(getProducts, { filters: '$filters', pageNumber: '$pageNumber' })products;
 
     connectedCallback() {
         registerListener('filterChange', this.handleFilterChange, this);
